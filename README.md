@@ -2,7 +2,7 @@
 
 This library allows your React application to automatically generate forms using [ReactHookForm](https://react-hook-form.com/) and rendering by Material-UI. The form and validations are generated following a schema inspired by [SimpleSchema](https://github.com/aldeed/simple-schema-js).
 
-## [Play with the demo](https://dgonz64.github.io/rhfa-material-ui-demo/demo/)
+## [Play with the demo](https://dgonz64.github.io/rhfa-demo-material-ui/demo/)
 
 ## Installation
 
