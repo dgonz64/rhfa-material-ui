@@ -95,8 +95,8 @@ export default {
         component: ControlAdaptor,
         adaptorComponent: TextField,
         controlProps: {
-          style: { width: 240 },
           select: true,
+          style: { display: 'flex' },
           onChange: setValueFromEvent,
           children: options.map(op =>
             <MenuItem key={op.value} value={op.value}>
