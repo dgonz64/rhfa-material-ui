@@ -1,6 +1,6 @@
 {
   "name": "rhfa-material-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate automatic forms following a schema using Material-UI",
   "main": "lib/index.js",
   "keywords": [
