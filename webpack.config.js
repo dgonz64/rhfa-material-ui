@@ -24,5 +24,8 @@ module.exports = {
         loader: 'babel-loader',
       },
     ],
-  }
+  },
+  externals: [
+    /^@material-ui\/(core|icons)[\/a-zA-Z]*/
+  ]
 }
