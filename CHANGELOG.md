@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+* Material-UI is no longer bundled with this package
+* Slightly properer way to set select width
+
 ## 1.0.1
 
 ### Changed

@@ -4,9 +4,15 @@ This library allows your React application to automatically generate forms using
 
 ## [Play with the demo](https://dgonz64.github.io/rhfa-demo-material-ui/demo/)
 
+## Breaking changes
+
+After version `1.1.0` you have to install material-ui in your project:
+
+    $ npm install @material-ui/core @material-ui/icons --save
+
 ## Installation
 
-    $ npm install react-hook-form rhfa-material-ui --save
+    $ npm install react-hook-form rhfa-material-ui @material-ui/core @material-ui/icons --save
 
 ## Usage
 
