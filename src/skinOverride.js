@@ -95,6 +95,7 @@ export default {
         component: ControlAdaptor,
         adaptorComponent: TextField,
         controlProps: {
+          style: { width: 240 },
           select: true,
           onChange: setValueFromEvent,
           children: options.map(op =>
