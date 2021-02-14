@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+* Providing id in inputs
+
 ## 1.1.1
 
 * Update dependencies
