@@ -20,6 +20,8 @@ import { ArrayTable } from './components/ArrayTable'
 import { ArrayPanel } from './components/ArrayPanel'
 import { trField, tr, processOptions } from 'react-hook-form-auto'
 
+const makeId = ({ schemaTypeName, name }) => `${schemaTypeName}-${name}`
+
 const ControlAdaptor = props => {
   const {
     name,
@@ -29,6 +31,7 @@ const ControlAdaptor = props => {
 
     field,
     fieldSchema,
+    schemaTypeName,
     adaptorComponent,
     register
   } = props
@@ -41,6 +44,7 @@ const ControlAdaptor = props => {
     <div>
       <Comp
         {...controlProps}
+        id={makeId({ schemaTypeName, name })}
         key={name}
         name={name}
         defaultValue={defaultValue || ''}
@@ -111,13 +115,19 @@ export default {
     coerce: value => Boolean(value),
     render: {
       component: (props) => {
-        const { register, name, defaultValue } = props
+        const {
+          register,
+          name,
+          defaultValue,
+          schemaTypeName
+        } = props
 
         return (
           <div>
             <FormControlLabel
               control={
                 <Checkbox
+                  id={makeId({ schemaTypeName, name })}
                   name={name}
                   inputProps={{ ref: register }}
                   defaultValue={defaultValue}
@@ -133,7 +143,12 @@ export default {
   radios: {
     render: {
       component: (props) => {
-        const { name, register, defaultValue } = props
+        const {
+          name,
+          register,
+          defaultValue,
+          schemaTypeName
+        } = props
 
         const label = trField(props)
         const options = processOptions(props)
@@ -148,6 +163,7 @@ export default {
             </FormLabel>
             <RadioGroup
               aria-label={label}
+              id={makeId({ schemaTypeName, name })}
               name={name}
               defaultValue={defaultValue || 0}
             >
@@ -172,7 +188,14 @@ export default {
     coerce: value => parseFloat(value),
     render: {
       component: (props) => {
-        const { name, defaultValue, fieldSchema, register, setValue } = props
+        const {
+          name,
+          defaultValue,
+          fieldSchema,
+          register,
+          setValue,
+          schemaTypeName
+        } = props
 
         register({ name })
         const setValueFromEvent = (event, value) => {
@@ -188,6 +211,7 @@ export default {
             </Typography>
             <Slider
               {...sliderParams}
+              id={makeId({ schemaTypeName, name })}
               defaultValue={defaultValue || 0}
               aria-labelledby="discrete-slider"
               valueLabelDisplay="auto"
