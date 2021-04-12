@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.3
+
+* Passing ref to `Autoform`
+* Bumping packages to address security concerns
+
 ## 1.1.2
 
 * Providing id in inputs
