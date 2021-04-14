@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+ 
+* Pass `...rest` control props to material-ui inputProps in order to honor `FieldPropsOverride`.
+
 ## 1.1.3
 
 * Passing ref to `Autoform`

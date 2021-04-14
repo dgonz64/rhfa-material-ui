@@ -33,7 +33,9 @@ const ControlAdaptor = props => {
     fieldSchema,
     schemaTypeName,
     adaptorComponent,
-    register
+    register,
+    
+    ...rest
   } = props
 
   const error = errors[field]
@@ -48,7 +50,7 @@ const ControlAdaptor = props => {
         key={name}
         name={name}
         defaultValue={defaultValue || ''}
-        inputProps={{ ref: register }}
+        inputProps={{ ref: register, ...rest }}
         label={trField(props)}
         error={!!errorText}
         helperText={errorText}
