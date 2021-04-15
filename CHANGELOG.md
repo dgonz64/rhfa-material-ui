@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.5
+
+* Better overrides handling
+* Avoid DOM complaints with `<p>` descentant from `<Typography>`.
+
 ## 1.1.4
  
 * Pass `...rest` control props to material-ui inputProps in order to honor `FieldPropsOverride`.

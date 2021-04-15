@@ -248,10 +248,15 @@ export default {
     render: ({ children, header }) =>
       <Card>
         <CardContent>
-          <Typography color="textSecondary" gutterBottom>
+          <Typography
+            color="textSecondary"
+            gutterBottom
+            variant="body2"
+            component="span"
+          >
             {header}
           </Typography>
-          <Typography variant="body2" component="p">
+          <Typography variant="body2" component={'span'}>
             {children}
           </Typography>
         </CardContent>
