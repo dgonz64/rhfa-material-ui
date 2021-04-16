@@ -56,6 +56,6 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "react-hook-form-auto": "^1.2.7"
+    "react-hook-form-auto": "^1.2.9"
   }
 }

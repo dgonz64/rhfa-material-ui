@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.6
+
+* Update rhfa to 1.2.8
+
 ## 1.1.5
 
 * Better overrides handling
