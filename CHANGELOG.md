@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.7
+
+* Update rhfa to 1.2.10
+
 ## 1.1.6
 
 * Update rhfa to 1.2.8
