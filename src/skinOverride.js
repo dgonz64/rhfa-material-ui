@@ -27,18 +27,17 @@ const ControlAdaptor = props => {
     name,
     defaultValue,
     controlProps,
-    errors,
+    errorText,
     overrides,
 
     field,
     fieldSchema,
     schemaTypeName,
     adaptorComponent,
-    register,
+    onChange,
+    onBlur
   } = props
 
-  const error = errors[field]
-  const errorText = typeof error == 'object' ? tr(error.message, fieldSchema) : ''
   const Comp = adaptorComponent
 
   return (
@@ -49,7 +48,8 @@ const ControlAdaptor = props => {
         key={name}
         name={name}
         defaultValue={defaultValue || ''}
-        inputProps={{ ref: register }}
+        onChange={onChange}
+        onBlur={onBlur}
         label={trField(props)}
         error={!!errorText}
         helperText={errorText}
@@ -84,17 +84,16 @@ export default {
   },
   select: {
     render: (props) => {
-      const { schemaTypeName, name, field, fieldSchema, register, setValue } = props
+      const {
+        name,
+        onChange,
+        onBlur
+      } = props
 
       const options = processOptions({
         ...props,
         addDefault: true
       })
-
-      register({ name })
-      const setValueFromEvent = event => {
-        setValue(name, event.target.value)
-      }
 
       return {
         ...props,
@@ -103,7 +102,8 @@ export default {
         controlProps: {
           select: true,
           style: { display: 'flex' },
-          onChange: setValueFromEvent,
+          onChange,
+          onBlur,
           children: options.map(op =>
             <MenuItem key={op.value} value={op.value}>
               {op.label}
@@ -118,11 +118,16 @@ export default {
     render: {
       component: (props) => {
         const {
-          register,
           name,
           defaultValue,
-          schemaTypeName
+          schemaTypeName,
+          setValue,
+          onBlur
         } = props
+
+        const handleChange = event => {
+          setValue(name, event.target.checked)
+        }
 
         return (
           <div>
@@ -131,8 +136,9 @@ export default {
                 <Checkbox
                   id={makeId({ schemaTypeName, name })}
                   name={name}
-                  inputProps={{ ref: register }}
                   defaultValue={defaultValue}
+                  onChange={handleChange}
+                  onBlur={onBlur}
                 />
               }
               label={trField(props)}
@@ -146,17 +152,15 @@ export default {
     render: {
       component: (props) => {
         const {
+          id,
           name,
-          register,
           defaultValue,
-          schemaTypeName
+          onChange,
+          onBlur
         } = props
 
         const label = trField(props)
         const options = processOptions(props)
-        const inputProps = {
-          ref: register
-        }
 
         return (
           <div>
@@ -164,10 +168,12 @@ export default {
               {label}
             </FormLabel>
             <RadioGroup
+              id={id}
               aria-label={label}
-              id={makeId({ schemaTypeName, name })}
               name={name}
               defaultValue={defaultValue || 0}
+              onChange={onChange}
+              onBlur={onBlur}
             >
               {
                 options.map(op =>
@@ -175,7 +181,7 @@ export default {
                     name={name}
                     key={op.value}
                     value={op.value}
-                    control={<Radio inputProps={inputProps} />}
+                    control={<Radio />}
                     label={op.label}
                   />
                 )
@@ -191,18 +197,14 @@ export default {
     render: {
       component: (props) => {
         const {
+          id,
           name,
           defaultValue,
           fieldSchema,
-          register,
-          setValue,
-          schemaTypeName
+          schemaTypeName,
+          onChange,
+          onBlur
         } = props
-
-        register({ name })
-        const setValueFromEvent = (event, value) => {
-          setValue(name, value)
-        }
 
         const { sliderParams } = fieldSchema
 
@@ -213,13 +215,14 @@ export default {
             </Typography>
             <Slider
               {...sliderParams}
-              id={makeId({ schemaTypeName, name })}
+              id={id}
               defaultValue={defaultValue || 0}
               aria-labelledby="discrete-slider"
               valueLabelDisplay="auto"
               min={fieldSchema.min}
               max={fieldSchema.max}
-              onChange={setValueFromEvent}
+              onChange={onChange}
+              onBlur={onBlur}
             />
           </div>
         )

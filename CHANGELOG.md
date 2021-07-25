@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.1
+
+* Merged with upstream AKA dependabot
+
+## 1.2.0
+
+* Upgrade rhfa to 1.3
+
 ## 1.1.7
 
 * Update rhfa to 1.2.10
