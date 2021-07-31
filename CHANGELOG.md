@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+* Update to deal with `inputRef` and `helperText`
+
 ## 1.2.1
 
 * Merged with upstream AKA dependabot

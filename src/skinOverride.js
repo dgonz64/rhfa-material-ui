@@ -28,6 +28,7 @@ const ControlAdaptor = props => {
     defaultValue,
     controlProps,
     errorText,
+    helperText,
     overrides,
 
     field,
@@ -35,27 +36,27 @@ const ControlAdaptor = props => {
     schemaTypeName,
     adaptorComponent,
     onChange,
-    onBlur
+    onBlur,
+    inputRef
   } = props
 
   const Comp = adaptorComponent
 
   return (
-    <div>
-      <Comp
-        {...controlProps}
-        id={makeId({ schemaTypeName, name })}
-        key={name}
-        name={name}
-        defaultValue={defaultValue || ''}
-        onChange={onChange}
-        onBlur={onBlur}
-        label={trField(props)}
-        error={!!errorText}
-        helperText={errorText}
-        {...overrides}
-      />
-    </div>
+    <Comp
+      {...controlProps}
+      id={makeId({ schemaTypeName, name })}
+      key={name}
+      name={name}
+      defaultValue={defaultValue || ''}
+      onChange={onChange}
+      onBlur={onBlur}
+      label={trField(props)}
+      error={!!errorText}
+      helperText={errorText || helperText}
+      inputRef={inputRef}
+      {...overrides}
+    />
   )
 }
 
