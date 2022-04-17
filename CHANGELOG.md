@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.3
+
+* Update some packages for security
+
 ## 1.2.2
 
 * Update to deal with `inputRef` and `helperText`

@@ -20,28 +20,27 @@
     "url": "https://github.com/dgonz64/rhfa-material-ui"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "jest": "^26.1.0",
-    "jsdoc-to-markdown": "^6.0.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hook-form": "^7.0.0",
-    "rimraf": "^3.0.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "minimist": "1.2.5"
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "jest": "^27.5.1",
+    "jsdoc-to-markdown": "^7.1.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-hook-form": "^7.30.0",
+    "rimraf": "^3.0.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.0"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1"
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3"
   },
   "scripts": {
     "clean": "rimraf dist && rimraf lib",
